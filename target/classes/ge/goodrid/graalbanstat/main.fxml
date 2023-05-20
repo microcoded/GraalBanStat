@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="493.0" prefWidth="798.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ge.goodrid.graalbanstat.MainController">
+
+  <!--    <padding>-->
+  <!--        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />-->
+  <!--    </padding>-->
+
+
+  <!--    <Label text="© JCookie" />-->
+  <MenuBar>
+    <Menu mnemonicParsing="false" text="File">
+      <MenuItem mnemonicParsing="false" text="Close" onAction="#closePressed" fx:id="closeButton" />
+    </Menu>
+    <Menu mnemonicParsing="false" text="Help">
+      <MenuItem mnemonicParsing="false" onAction="#aboutPressed" text="About" />
+    </Menu>
+  </MenuBar>
+</VBox>

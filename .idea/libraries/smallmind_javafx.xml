@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="smallmind.javafx" type="repository">
+    <properties maven-id="org.smallmind:smallmind-javafx:1.6.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/smallmind/smallmind-javafx/1.6.0/smallmind-javafx-1.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
