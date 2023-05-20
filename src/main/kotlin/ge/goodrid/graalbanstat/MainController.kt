@@ -50,6 +50,7 @@ class MainController {
             val stage = Stage()
             stage.scene = Scene(root1)
             stage.initModality(Modality.APPLICATION_MODAL)
+            stage.isResizable = false
             stage.show()
         } catch (e: Exception) {
             e.printStackTrace()

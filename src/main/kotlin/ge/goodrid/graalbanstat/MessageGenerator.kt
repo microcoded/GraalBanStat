@@ -1,6 +1,7 @@
 package ge.goodrid.graalbanstat
 
 import java.time.YearMonth
+import kotlin.math.abs
 
 class MessageGenerator(
     private val previousMonthWarns: MutableMap<String, Int>,
@@ -28,10 +29,46 @@ class MessageGenerator(
 
         msg += "Hello everyone, the $mY ban statistics have been calculated! <@&185535444262322176> <@&605934575163670539>\n\n"
         msg += "In $currentMonth, we had $calcBanTotal bans and $calcWarnTotal warnings issued.\n"
-        msg += "The lists below compare $mY2 to $mY. An up arrow (:uparrow:) indicates an increase, and a down arrow (:downarrow:) indicates a decrease.\n\n"
-        msg += "**Bans**"
+        msg += "The lists below compare $mY2 to $mY. An up arrow (:uparrow:) indicates an increase, and a down arrow (:downarrow:) indicates a decrease. Any category with a total of 0 this month is excluded.\n\n"
+        msg += "**Bans**\n"
 
-        return msg
+        for ((category, banCount) in calcMonthBans.entries) {
+            var increase: Double
+            val oldBanCount = previousMonthBans.getOrDefault(category, 0)
+            var trend: String
+            var trendValue: String
+            if (oldBanCount != 0) {
+                increase = 100.0 * (banCount - oldBanCount) / oldBanCount
+                trend = if (increase > 0) ":uparrow:" else if (increase < 0) ":downarrow:" else ":heavy_minus_sign:"
+                trendValue = " (" + trend + String.format("%.1f", abs(increase)) + "%)"
+            } else {
+                trendValue = " (:uparrow: ∞%)"
+            }
+            if (calcMonthBans.containsKey(category)) {
+                msg += "> *$category:*    $banCount $trendValue\n"
+            }
+        }
+
+        msg += "\n**Warnings**\n"
+        for ((category, warnCount) in calcMonthWarns.entries) {
+            var increase: Double
+            var trend: String
+            var trendValue: String
+            val oldWarnCount = previousMonthWarns.getOrDefault(category, 0)
+            if (oldWarnCount != 0) {
+                increase = 100.0 * (warnCount - oldWarnCount) / oldWarnCount
+                trend = if (increase > 0) ":uparrow:" else if (increase < 0) ":downarrow:" else ":heavy_minus_sign:"
+                trendValue = " (" + trend + String.format("%.1f", abs(increase)) + "%)"
+            } else {
+                trendValue = " (:uparrow: ∞%)"
+            }
+            if (calcMonthWarns.containsKey(category)) {
+                msg += "> *$category:*    $warnCount $trendValue\n"
+            }
+        }
+
+
+        return msg.replace("\n", System.getProperty("line.separator"))
 
     }
 

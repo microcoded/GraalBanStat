@@ -20,10 +20,10 @@
            <ComboBox fx:id="monthBox" prefWidth="110.0" promptText="Month" />
            <Button onAction="#run" prefWidth="110" text="Calculate Stats" />
      </VBox>
-     <TextArea fx:id="outputTxtArea" editable="false" maxWidth="1.7976931348623157E308" minWidth="-Infinity" text="Output:" wrapText="true" />
+     <TextArea fx:id="outputTxtArea" editable="false" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="9999999.0" prefWidth="512.0" text="Output:" wrapText="true" />
       <Button mnemonicParsing="false" onAction="#copyText" text="Copy to Clipboard" />
       <padding>
-         <Insets left="10.0" right="10.0" top="10.0" />
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
       </padding>
    </HBox>
 </VBox>
