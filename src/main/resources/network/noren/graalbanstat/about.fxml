@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <VBox alignment="TOP_CENTER" prefWidth="213.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="ge.goodrid.graalbanstat.AboutController">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="network.noren.graalbanstat.AboutController">
    <Label text="GraalBanStat">
       <font>
          <Font name="System Bold" size="20.0"/>

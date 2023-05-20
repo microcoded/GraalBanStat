@@ -1,4 +1,4 @@
-package ge.goodrid.graalbanstat
+package network.noren.graalbanstat
 
 import java.time.YearMonth
 import kotlin.math.abs

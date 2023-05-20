@@ -1,4 +1,4 @@
-package ge.goodrid.graalbanstat
+package network.noren.graalbanstat
 
 import javafx.application.Application
 import javafx.fxml.FXMLLoader

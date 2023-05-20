@@ -5,6 +5,6 @@ module ge.goodrid.graalbanstat {
 
     requires org.controlsfx.controls;
 
-    opens ge.goodrid.graalbanstat to javafx.fxml;
-    exports ge.goodrid.graalbanstat;
+    opens network.noren.graalbanstat to javafx.fxml;
+    exports network.noren.graalbanstat;
 }
