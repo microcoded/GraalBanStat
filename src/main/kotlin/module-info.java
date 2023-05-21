@@ -5,7 +5,6 @@ module ge.goodrid.graalbanstat {
     requires javafx.base;
     requires javafx.graphics;
 
-    requires org.controlsfx.controls;
     requires java.desktop;
 
     opens network.noren.graalbanstat to javafx.fxml;
