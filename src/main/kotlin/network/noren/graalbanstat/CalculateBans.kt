@@ -14,9 +14,11 @@ class CalculateBans(val bansFile: File, val calcMonth: String) {
     private var calcMonthWarns: MutableMap<String, Int> = TreeMap()
     private var calcMonthBans: MutableMap<String, Int> = TreeMap()
 
+    lateinit var mg: MessageGenerator
+
     fun main(): String {
         setBansWarns()
-        val mg = MessageGenerator(previousMonthWarns, previousMonthBans, calcMonthWarns, calcMonthBans, compareMonth, calcMonth)
+        mg = MessageGenerator(previousMonthWarns, previousMonthBans, calcMonthWarns, calcMonthBans, compareMonth, calcMonth)
         return mg.generateMessage()
     }
 
@@ -111,4 +113,11 @@ class CalculateBans(val bansFile: File, val calcMonth: String) {
         return lines
     }
 
+    fun getReversedWarnMap(): MutableMap<String, Int> {
+        return calcMonthWarns.toSortedMap(Comparator.reverseOrder())
+    }
+
+    fun getReversedBanMap(): MutableMap<String, Int> {
+        return calcMonthBans.toSortedMap(Comparator.reverseOrder())
+    }
 }

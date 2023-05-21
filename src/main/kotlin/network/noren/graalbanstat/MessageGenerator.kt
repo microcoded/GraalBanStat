@@ -4,22 +4,22 @@ import java.time.YearMonth
 import kotlin.math.abs
 
 class MessageGenerator(
-    private val previousMonthWarns: MutableMap<String, Int>,
-    private val previousMonthBans: MutableMap<String, Int>,
-    private val calcMonthWarns: MutableMap<String, Int>,
-    private val calcMonthBans: MutableMap<String, Int>,
-    private val prevMonth: String,
-    private val calcMonth: String) {
+    val previousMonthWarns: MutableMap<String, Int>,
+    val previousMonthBans: MutableMap<String, Int>,
+    val calcMonthWarns: MutableMap<String, Int>,
+    val calcMonthBans: MutableMap<String, Int>,
+    val prevMonth: String,
+    val calcMonth: String) {
 
-    private var prevBanTotal = 0
-    private var prevWarnTotal = 0
-    private var calcBanTotal = 0
-    private var calcWarnTotal = 0
+    var prevBanTotal = 0
+    var prevWarnTotal = 0
+    var calcBanTotal = 0
+    var calcWarnTotal = 0
 
-    private lateinit var mY: String
-    private lateinit var mY2: String
-    private lateinit var previousMonth: String
-    private lateinit var currentMonth: String
+    lateinit var mY: String
+    lateinit var mY2: String
+    lateinit var previousMonth: String
+    lateinit var currentMonth: String
 
     fun generateMessage(): String {
         calculateTotals()

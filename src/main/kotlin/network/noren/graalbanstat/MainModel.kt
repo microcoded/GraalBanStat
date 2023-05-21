@@ -17,9 +17,10 @@ class MainModel : Application() {
 
         stage.title = "GraalBanStat"
         stage.scene = scene
-
         controller.setStage(stage)
         stage.show()
+        stage.maxWidthProperty().bind(stage.widthProperty())
+        stage.minWidthProperty().bind(stage.widthProperty())
     }
 
     fun exit() {
