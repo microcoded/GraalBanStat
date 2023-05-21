@@ -112,12 +112,4 @@ class CalculateBans(val bansFile: File, val calcMonth: String) {
 
         return lines
     }
-
-    fun getReversedWarnMap(): MutableMap<String, Int> {
-        return calcMonthWarns.toSortedMap(Comparator.reverseOrder())
-    }
-
-    fun getReversedBanMap(): MutableMap<String, Int> {
-        return calcMonthBans.toSortedMap(Comparator.reverseOrder())
-    }
 }
