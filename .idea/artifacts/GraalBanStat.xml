@@ -1,6 +1,15 @@
 <component name="ArtifactManager">
   <artifact type="jpackage" name="GraalBanStat">
     <output-path>$PROJECT_DIR$/out/artifacts/GraalBanStat</output-path>
+    <properties id="jpackage-properties">
+      <options>
+        <option name="version" value="1.0" />
+        <option name="copyright" value="JCookie 2023" />
+        <option name="description" value="" />
+        <option name="vendor" value="" />
+        <option name="mainClass" value="" />
+      </options>
+    </properties>
     <root id="root">
       <element id="archive" name="GraalBanStat.jar">
         <element id="module-output" name="GraalBanStat" />

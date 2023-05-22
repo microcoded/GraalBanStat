@@ -32,6 +32,13 @@ class MainModel : Application() {
         return previousMonth.getDisplayName(TextStyle.SHORT, Locale.ENGLISH)
     }
 
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            launch(MainModel::class.java)
+        }
+    }
+
 }
 
 fun main() {
