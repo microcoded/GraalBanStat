@@ -1,10 +1,6 @@
 package network.noren.graalbanstat
 
-import javafx.collections.FXCollections
-import javafx.collections.ObservableList
 import javafx.fxml.FXML
-import javafx.scene.chart.CategoryAxis
-import javafx.scene.chart.NumberAxis
 import javafx.scene.chart.StackedBarChart
 import javafx.scene.chart.XYChart
 import javafx.scene.chart.XYChart.Series
@@ -12,12 +8,6 @@ import javafx.scene.chart.XYChart.Series
 
 class GraphController {
 
-
-    @FXML
-    lateinit var numAxis: NumberAxis
-
-    @FXML
-    lateinit var catAxis: CategoryAxis
 
     @FXML
     lateinit var banWarnChart: StackedBarChart<Int, String>
